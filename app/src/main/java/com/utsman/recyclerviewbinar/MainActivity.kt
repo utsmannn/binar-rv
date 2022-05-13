@@ -10,13 +10,27 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
+    private val keywordList = listOf(
+        "beach",
+        "nature",
+        "cat",
+        "dog",
+        "home",
+        "tech",
+        "covid",
+        "beauty",
+        "electric",
+        "vintage",
+        "watch"
+    )
+
     private val peopleList = listOf<People>(
-        People("Ucup", 31),
-        People("Anton", 21),
-        People("Narto", 42),
-        People("Ronaldo", 34),
-        People("Fahri", 21),
-        People("Dinda", 32)
+        People("Ucup", 31, keywordList.random()),
+        People("Anton", 21, keywordList.random()),
+        People("Narto", 42, keywordList.random()),
+        People("Ronaldo", 34, keywordList.random()),
+        People("Fahri", 21, keywordList.random()),
+        People("Dinda", 32, keywordList.random())
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             val nameEdit = peopleEtAdded.text.toString()
             val randomAge = (10..40).random()
 
-            val people = People(nameEdit, randomAge)
+            val people = People(nameEdit, randomAge, keywordList.random())
             peopleAdapter.addItem(people)
 
             val sizePeople = peopleAdapter.itemCount - 1

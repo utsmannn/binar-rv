@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class PeopleAdapter : RecyclerView.Adapter<PeopleViewHolder>() {
+
     private val dataPeople: MutableList<People> = mutableListOf()
 
     // add function to add item list
@@ -23,8 +24,8 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleViewHolder>() {
 
     // buat sort
     fun sort() {
-        dataPeople.sortByDescending { it.age }
-        notifyDataSetChanged()
+//        dataPeople.sortByDescending { it.age }
+//        notifyDataSetChanged()
     }
 
     // gunanya untuk membuat item view dari xml secara sequental untuk view holder
